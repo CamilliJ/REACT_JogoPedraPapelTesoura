@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body{
+  background-color: #003f3a;
+  font-family: 'Inter', sans-serif;
+}
+
+.box-choose{
+  border: 2px solid white;
+  width: 40%;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-top: 20px;
+
+}
+
+.option{
+  font-weight: 600;
+  color: white;
+  font-size: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.botom{
+  margin-bottom: 15px
+}
+
+.score{
+  background-color: white;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text{
+  margin-top: 10px;
+}
+
+.score-number{
+  margin-top: 10px;
+  font-size: 50px;
+  color: #003f3a;
+  font-weight: 900;
+}
+
+.placar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-x{
+  font-size: 50px;
+  color: #003f3a;
+  font-weight: 400;
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.main{
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+
+  width: 80%;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+
+.yourchoose-box{
+  width: 30%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-weight: 400;
+  color: white;
+  font-size: 25px;
+}
+
+.decision{
+  width: 300px;
+  height: 300px;
+  margin-top: 35px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.imagem-choose{
+  width: 270px;
+  margin-top: -30px;
+  margin-left: 18px
+}
+
+.yourloose-box{
+  width: 30%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.box-alinhamento{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mensage{
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: white;
+  font-weight: 600;
+}
+
+.playagain{
+  background-color: #0F96A4;
+  padding: 30px 40px;
+  color: #003f3a;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  display: none;
+}
+
+.play{
+  background-color: #0F96A4;
+  padding: 30px 40px;
+  color: #003f3a;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.empates{
+  margin-top: 0
+}
+
+
+.botchoose-box{
+  width: 30%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-weight: 400;
+  color: white;
+  font-size: 25px;
+}
+
+.youchoose-text{
+  font-size: 18px;
+}
