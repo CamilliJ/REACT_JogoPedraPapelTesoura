@@ -21,6 +21,8 @@ class Game extends Component {
       ponto_player: 0,
       ponto_bot: 0,
       empates: 0,
+      playagain: "JOGAR",
+      mensage: ""
     }
 
 
@@ -31,22 +33,19 @@ class Game extends Component {
   }
 
   handlePedra = () => {
-    this.setState({ tipo_jogador: "PEDRA", icone_jogador: pedra, escolheu: true })
-    document.getElementById("mensage").innerHTML = ""
+    this.setState({ tipo_jogador: "PEDRA", icone_jogador: pedra, escolheu: true, mensage: ""  })
     console.log(this.state.tipo)
     console.log(this.state.icone)
   }
 
   handlePapel = () => {
-    this.setState({ tipo_jogador: "PAPEL", icone_jogador: papel, escolheu: true })
-    document.getElementById("mensage").innerHTML = ""
+    this.setState({ tipo_jogador: "PAPEL", icone_jogador: papel, escolheu: true, mensage: ""  })
     console.log(this.state.tipo)
     console.log(this.state.icone)
   }
 
   handleTesoura = () => {
-    this.setState({ tipo_jogador: "TESOURA", icone_jogador: tesoura, escolheu: true })
-    document.getElementById("mensage").innerHTML = ""
+    this.setState({ tipo_jogador: "TESOURA", icone_jogador: tesoura, escolheu: true, mensage: "" })
     console.log(this.state.tipo)
     console.log(this.state.icone)
 
@@ -75,62 +74,44 @@ class Game extends Component {
         this.setState({ tipo_bot: "PEDRA", icone_bot: pedra })
         if (this.state.tipo_jogador == "PAPEL") {
           var ganhou = this.state.ponto_player += 1
-          this.setState({ ponto_player: ganhou })
-          document.getElementById("mensage").innerHTML = "VOCÊ GANHOU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ ponto_player: ganhou, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ GANHOU!" })
         }
         if (this.state.tipo_jogador == "PEDRA") {
           var empate = this.state.empates += 1
-          this.setState({ empates: empate })
-          document.getElementById("mensage").innerHTML = "JOGO EMPATADO!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ empates: empate, playagain: "JOGAR NOVAMENTE", mensage: "JOGO EMPATADO!" })
         }
         if (this.state.tipo_jogador == "TESOURA") {
-          var perdeu = this.state.ponto_bot  += 1
-          this.setState({ ponto_bot: perdeu })
-          document.getElementById("mensage").innerHTML = "VOCÊ PERDEU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          var perdeu = this.state.ponto_bot += 1
+          this.setState({ ponto_bot: perdeu, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ PERDEU!" })
         }
 
       } else if (random == 1) {
         this.setState({ tipo_bot: "PAPEL", icone_bot: papel })
         if (this.state.tipo_jogador == "PAPEL") {
           var empate = this.state.empates += 1
-          this.setState({ empates: empate })
-          document.getElementById("mensage").innerHTML = "JOGO EMPATADO!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ empates: empate, playagain: "JOGAR NOVAMENTE", mensage: "JOGO EMPATADO!"  })
         }
         if (this.state.tipo_jogador == "PEDRA") {
-          var perdeu = this.state.ponto_bot  += 1
-          this.setState({ ponto_bot: perdeu })
-          document.getElementById("mensage").innerHTML = "VOCÊ PERDEU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          var perdeu = this.state.ponto_bot += 1
+          this.setState({ ponto_bot: perdeu, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ PERDEU!" })
         }
         if (this.state.tipo_jogador == "TESOURA") {
           var ganhou = this.state.ponto_player += 1
-          this.setState({ ponto_player: ganhou })
-          document.getElementById("mensage").innerHTML = "VOCÊ GANHOU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ ponto_player: ganhou, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ GANHOU!" })
         }
       } else {
         this.setState({ tipo_bot: "TESOURA", icone_bot: tesoura })
         if (this.state.tipo_jogador == "PAPEL") {
-          var perdeu = this.state.ponto_bot  += 1
-          this.setState({ ponto_bot: perdeu })
-          document.getElementById("mensage").innerHTML = "VOCÊ PERDEU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          var perdeu = this.state.ponto_bot += 1
+          this.setState({ ponto_bot: perdeu, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ PERDEU!"  })
         }
         if (this.state.tipo_jogador == "PEDRA") {
           var ganhou = this.state.ponto_player += 1
-          this.setState({ ponto_player: ganhou })
-          document.getElementById("mensage").innerHTML = "VOCÊ GANHOU!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ ponto_player: ganhou, playagain: "JOGAR NOVAMENTE", mensage: "VOCÊ GANHOU!" })
         }
         if (this.state.tipo_jogador == "TESOURA") {
           var empate = this.state.empates += 1
-          this.setState({ empates: empate })
-          document.getElementById("mensage").innerHTML = "JOGO EMPATADO!"
-          document.getElementById("playagain").innerHTML = "JOGAR NOVAMENTE"
+          this.setState({ empates: empate, playagain: "JOGAR NOVAMENTE", mensage: "JOGO EMPATADO!"  })
         }
       }
     }, 1000);
@@ -202,8 +183,8 @@ class Game extends Component {
           </div>
           <div className="yourloose-box">
             <div className='box-alinhamento'>
-              <div className="mensage" id='mensage'> </div>
-              <div className="play" onClick={this.handleJogar} id='playagain'> JOGAR</div>
+              <div className="mensage" id='mensage'>{this.state.mensage} </div>
+              <div className="play" onClick={this.handleJogar} id='playagain'> {this.state.playagain}</div>
             </div>
 
           </div>
